@@ -92,7 +92,7 @@ namespace Id3
         /// <summary>
         ///     Version of the ID3 tag
         /// </summary>
-        public Id3Version Version { get; internal set; }
+        public Id3Version Version { get; internal set; } = Id3Version.V23;
         #endregion
 
         #region Frame operations
