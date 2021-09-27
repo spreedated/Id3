@@ -18,9 +18,6 @@ limitations under the License.
 #endregion
 
 using System;
-using System.Runtime.CompilerServices;
-
-[assembly: InternalsVisibleTo("Id3.Net.Serialization")]
 
 namespace Id3
 {

@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFrameworks>net40;net5.0</TargetFrameworks>
     <RootNamespace>Id3.InfoFx</RootNamespace>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>id3infofx.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

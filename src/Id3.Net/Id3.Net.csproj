@@ -18,6 +18,8 @@
     <PackageReleaseNotes>Release notes are at https://github.com/JeevanJames/Id3/releases</PackageReleaseNotes>
     <PackageIconUrl>https://github.com/JeevanJames/Id3/raw/master/icon.png</PackageIconUrl>
     <AssemblyName>Id3.Net</AssemblyName>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>id3.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
