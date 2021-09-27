@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Id3.Net.Files\Id3.Net.Files.csproj" />
+    <ProjectReference Include="..\Id3.Net.InfoFx\Id3.Net.InfoFx.csproj" />
     <ProjectReference Include="..\Id3.Net.Serialization\Id3.Net.Serialization.csproj" />
     <ProjectReference Include="..\Id3.Net\Id3.Net.csproj" />
   </ItemGroup>
