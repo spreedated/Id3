@@ -1,4 +1,4 @@
-    #region --- License & Copyright Notice ---
+#region --- License & Copyright Notice ---
 /*
 Copyright (c) 2005-2019 Jeevan James
 All rights reserved.
@@ -17,11 +17,11 @@ limitations under the License.
 */
 #endregion
 
+using Id3.Frames;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using Id3.Frames;
 
 namespace Id3.v2
 {
@@ -97,7 +97,8 @@ namespace Id3.v2
             additionalData = headerContainer;
 
             byte flags = headerBytes[1];
-            var header = new Id3V2StandardHeader {
+            var header = new Id3V2StandardHeader
+            {
                 Revision = headerBytes[0],
                 Unsyncronization = (flags & 0x80) > 0,
                 ExtendedHeader = (flags & 0x40) > 0,
@@ -115,7 +116,8 @@ namespace Id3.v2
                 SyncSafeNumber.DecodeSafe(tagData, currentPos, 4);
                 currentPos += 4;
 
-                var extendedHeader = new Id3V2ExtendedHeader {
+                var extendedHeader = new Id3V2ExtendedHeader
+                {
                     PaddingSize = SyncSafeNumber.DecodeNormal(tagData, currentPos + 2, 4)
                 };
 
@@ -123,7 +125,8 @@ namespace Id3.v2
                 {
                     extendedHeader.Crc32 = SyncSafeNumber.DecodeNormal(tagData, currentPos + 6, 4);
                     currentPos += 10;
-                } else
+                }
+                else
                     currentPos += 6;
 
                 headerContainer.ExtendedHeader = extendedHeader;
@@ -276,7 +279,7 @@ namespace Id3.v2
                 byte[] frameBytes = mapping.Encoder(frame);
                 bytes.AddRange(Encoding.ASCII.GetBytes(GetFrameIdFromFrame(frame)));
                 bytes.AddRange(SyncSafeNumber.EncodeNormal(frameBytes.Length));
-                bytes.AddRange(new byte[] {0, 0});
+                bytes.AddRange(new byte[] { 0, 0 });
                 bytes.AddRange(frameBytes);
             }
             int framesSize = bytes.Count - 6;

@@ -1,7 +1,6 @@
-using System;
-using System.IO;
 using Id3.Frames;
 using NUnit.Framework;
+using System.IO;
 
 namespace Id3.Net.Tests
 {
@@ -20,7 +19,8 @@ namespace Id3.Net.Tests
         [Test]
         public void DebugTest()
         {
-            var tag1 = new Id3Tag {
+            var tag1 = new Id3Tag
+            {
                 Track = new TrackFrame(3, 10) { Padding = 3 },
             };
             _mp3.WriteTag(tag1, Id3Version.V23);

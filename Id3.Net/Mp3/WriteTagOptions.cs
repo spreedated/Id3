@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Id3
+﻿namespace Id3
 {
     public class WriteTagOptions
     {
